@@ -1,33 +1,43 @@
 import React from 'react';
 import './App.css';
+import Article from './components/article/article';
 import { newState } from './constants';
 
-function App() {
+class App extends React.Component {
 
-  console.log(process.env.REACT_APP_CLIENT_ID);
+  constructor(props) {
+    super(props);
+    let freshState = Object.assign({}, newState);
+    this.state = freshState;
+    this.getArticles = this.getArticles.bind(this);
+  }
 
-  const url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + process.env.REACT_APP_CLIENT_ID;
-  fetch(url).then(
-    response => {
-      if (response.status === 200) {
-        return response.json()
-      } else {
-        this.handleResponseError(response)
+  getArticles() {
+    const url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + process.env.REACT_APP_CLIENT_ID;
+    fetch(url).then(
+      response => {
+        if (response.status === 200) {
+          return response.json()
+        } else {
+          this.handleResponseError(response)
+        }
       }
-    }
-  ).then(
-    body => {
-      console.log(body);
-    }
-  )
+    ).then(
+      body => {
+        console.log(body);
+      }
+    )
+  }
 
-  return (
-    <div className="App">
+  render() {
+    return (
+      <div className="App">
       <header className="App-header">
-        <h1>NYT Feed</h1>
+      <h1>NYT Feed</h1>
       </header>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
