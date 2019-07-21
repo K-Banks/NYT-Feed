@@ -112,7 +112,11 @@ class App extends React.Component {
       return (
         <div className="App">
           <header className="App-header">
-            <h1>NYT Feed</h1>
+            <h1> NYT Feed:
+
+            {this.state.liveFeed ? (' Recent Stories') : (' Top Stories')}
+
+            </h1>
             <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state} changeSelectedSection={this.changeSelectedSection} toggle={this.toggleLiveOrTop}/>
           </header>
 
