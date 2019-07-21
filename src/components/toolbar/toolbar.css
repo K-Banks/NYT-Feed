@@ -41,7 +41,6 @@
 }
  .button{
      width:178px;
-     height:18px;
      background-color:#ff3232 ;
      padding:12px;
      border-radius:5px;
@@ -56,8 +55,8 @@
      height:0px;
      border: 10px solid;
      border-color: white transparent transparent transparent;
-     right:6px;
-     top:18px;
+     right:15px;
+     top:20px;
 }
   .toggle:before{
     display: none;
