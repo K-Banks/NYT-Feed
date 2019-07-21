@@ -1,57 +1,27 @@
 import React from 'react';
 import './toolbar.css';
 
-class Toolbar extends React.Component{
+function Toolbar(props){
 
-  constructor(props){
-    super(props);
+    let sections = props.props;
+    let menuOptions = [];
+    sections.forEach((section) =>
+      menuOptions.push(<li key={section.value}>{section.title}</li>));
 
+    return (
+      <div  className="dropdown" >
+      <div className="button" onClick={props.showDropdownMenu}> Select Section </div>
 
-    this.state = {
-      displayMenu: false,
-    };
+        { props.state.displayMenu ? (
+          <ul>
+            {menuOptions}
+          </ul>
+        ):
+        (
+          null
+        )}
+    </div>
 
-    this.showDropdownMenu = this.showDropdownMenu.bind(this);
-    this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
-
-  };
-
-  showDropdownMenu(event) {
-    event.preventDefault();
-    this.setState({ displayMenu: true }, () => {
-      document.addEventListener('click', this.hideDropdownMenu);
-      console.log(this.props.props);
-    });
-  }
-
-  hideDropdownMenu() {
-    this.setState({ displayMenu: false }, () => {
-      document.removeEventListener('click', this.hideDropdownMenu);
-    });
-
-  }
-
-    render() {
-      let sections = this.props.props;
-      let menuOptions = [];
-      sections.forEach((section) =>
-        menuOptions.push(<li key={section.value}><a>{section.title}</a></li>)
-      )
-      return (
-        <div  className="dropdown" style = {{background:"red",width:"200px"}} >
-        <div className="button" onClick={this.showDropdownMenu}> Select Section </div>
-
-          { this.state.displayMenu ? (
-            <ul>
-              {menuOptions}
-            </ul>
-          ):
-          (
-            null
-          )}
-      </div>
-
-    );
-  }
+  );
 }
 export default Toolbar;
