@@ -4,6 +4,14 @@ import './article.css';
 function Article(props){
 
   if (props.props) {
+
+    let abstract = '';
+    if (props.props.abstract.length > 100) {
+      abstract = props.props.abstract.substring(0, 100) + '...'
+    } else {
+      abstract = props.props.abstract
+    }
+
     return(
       <div className="article-container">
         <div></div>
@@ -19,9 +27,7 @@ function Article(props){
         <div className="text">
           <h3><a href={props.props.url}>{props.props.title}</a></h3>
           <h5>{props.props.byline}</h5>
-        </div>
-        <div className="abstract">
-          <p>{props.props.abstract}</p>
+          <p>{abstract}</p>
         </div>
       </div>
     )

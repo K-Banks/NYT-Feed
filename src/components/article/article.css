@@ -1,7 +1,7 @@
 .article-container {
   display: grid;
-  grid-template-columns: 20px 1fr 3fr 20px;
-  grid-template-rows: 10px 120px 50px 20px;
+  grid-template-columns: 20px 1fr 5px 3fr 20px;
+  grid-template-rows: 10px 120px 10px;
   border-top: 2px #3e424c solid;
 }
 
@@ -17,19 +17,20 @@ img {
 
 .text {
   text-align: left;
-  grid-column: 3/4;
+  grid-column: 4/5;
   grid-row: 2/3;
   overflow-y: hidden;
 }
 
-.abstract {
-  text-align: left;
-  text-indent: 20px;
-  grid-column: 2/4;
-  grid-row: 3/4;
+h3, h5, p {
+  margin: 0;
 }
 
-.abstract p {
-  margin-top: 0;
-  margin-bottom: 0;
+h5 {
+  margin-top: 3px;
+}
+
+p {
+  vertical-align: bottom;
+  margin-top: 4px;
 }
