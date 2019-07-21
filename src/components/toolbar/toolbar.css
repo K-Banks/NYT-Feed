@@ -1,8 +1,13 @@
+.toolbar-container {
+  width: 90%;
+}
+
 .dropdown {
      position: relative;
      display: inline-block;
      background-color: red;
      width: 200px;
+     border-radius:5px;
 }
  ul {
      list-style-type: none;
@@ -42,6 +47,7 @@
      border-radius:5px;
      font-weight:bold;
      color:white;
+     display: inline-block;
 }
  .button:before{
      content:"";
@@ -55,4 +61,7 @@
 }
   .toggle:before{
     display: none;
+  }
+  .toggle {
+    float: right;
   }

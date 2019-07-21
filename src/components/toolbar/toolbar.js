@@ -13,8 +13,8 @@ function Toolbar(props){
     }
 
     return (
-      <div>
-        <div  className="dropdown" >
+      <div className="toolbar-container">
+        <div className="dropdown">
           <div className="button" onClick={props.showDropdownMenu}> {props.state.selectedSection.title} </div>
 
           { props.state.displayMenu ? (
