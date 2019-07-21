@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Article from './components/article/article.js';
 import Toolbar from './components/toolbar/toolbar.js';
-import ModalConductor from './components/modalConductor/modalConductor.js';
 import { newState, sectionsConstant } from './constants';
 
 class App extends React.Component {
@@ -18,7 +17,6 @@ class App extends React.Component {
     this.changeSelectedSection = this.changeSelectedSection.bind(this);
     this.buildURLRequest = this.buildURLRequest.bind(this);
     this.toggleLiveOrTop = this.toggleLiveOrTop.bind(this);
-    this.toggleComments = this.toggleComments.bind(this);
 
     this.getArticles();
   }
@@ -107,23 +105,13 @@ class App extends React.Component {
     }
   }
 
-  toggleComments() {
-    if (this.state.showComments) {
-      this.setState({ showComments: false})
-    } else {
-      this.setState({ showComments: true})
-    }
-  }
-
   render() {
     let currentState = this.state.articles;
 
       return (
         <div className="App">
-          <ModalConductor state={this.state} />
           <header className="App-header">
             <h1>NYT Feed</h1>
-            <button onClick={this.toggleComments}>Comments</button>
             <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state} changeSelectedSection={this.changeSelectedSection} toggle={this.toggleLiveOrTop}/>
           </header>
           <div className="feed">
