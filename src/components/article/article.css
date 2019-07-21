@@ -1,0 +1,29 @@
+.article-container {
+  display: grid;
+  grid-template-columns: 20px 1fr 3fr 20px;
+  grid-template-rows: 10px 120px 50px 20px;
+  border-top: 2px blue solid;
+}
+
+.image {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding-top: 10px;
+}
+
+img {
+  height: 110px;
+}
+
+.text {
+  text-align: left;
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.abstract {
+  text-align: left;
+  text-indent: 20px;
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
