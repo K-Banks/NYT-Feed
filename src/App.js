@@ -15,15 +15,13 @@ class App extends React.Component {
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
     this.changeSelectedSection = this.changeSelectedSection.bind(this);
+    this.buildURLRequest = this.buildURLRequest.bind(this);
 
     this.getArticles();
   }
 
   getArticles() {
-    if (this.state.selectedSection.sectionValue === null) {
-
-    }
-    let url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?limit=10&offset=0&api-key=' + process.env.REACT_APP_CLIENT_ID;
+    let url = this.buildURLRequest();
     fetch(url).then(
       response => {
         if (response.status === 200) {
@@ -66,7 +64,7 @@ class App extends React.Component {
 
   changeSelectedSection(section) {
     this.setState({ selectedSection: section}, () => {
-      // Insert trigger for new query
+      this.getArticles();
     })
   }
 
@@ -75,12 +73,14 @@ class App extends React.Component {
 
     //Determine live feed or top articles
     if (this.state.liveFeed) {
-      url = 'https://api.nytimes.com/svc/news/v3/content/all/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key';
+      url = 'https://api.nytimes.com/svc/news/v3/content/all/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key=';
     } else {
-      url = 'https://api.nytimes.com/svc/topstories/v2/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key';
+      url = 'https://api.nytimes.com/svc/topstories/v2/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key=';
     }
 
     // attach API Key
+
+    url = url + process.env.REACT_APP_CLIENT_ID;
     return url;
   }
 
