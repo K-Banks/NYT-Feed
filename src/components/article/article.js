@@ -5,16 +5,16 @@ function Article(props){
 
   if (props.props) {
     return(
-      <div class="article-container">
+      <div className="article-container">
         <div></div>
-        <div class="image">
+        <div className="image">
           <img src={props.props.thumbnail_standard} alt="article"></img>
         </div>
-        <div class="text">
+        <div className="text">
           <h3><a href={props.props.url}>{props.props.title}</a></h3>
           <h5>{props.props.byline}</h5>
         </div>
-        <div class="abstract">
+        <div className="abstract">
           <p>{props.props.abstract}</p>
         </div>
       </div>

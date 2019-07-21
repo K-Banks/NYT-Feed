@@ -51,7 +51,7 @@ class App extends React.Component {
           </header>
           <div className="feed">
           {currentState.map(function(article) {
-            return <Article props={article} />
+            return <Article props={article} key={article.slug_name}/>
           })}
           </div>
         </div>
