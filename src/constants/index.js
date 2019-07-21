@@ -3,6 +3,7 @@ export const newState = {
   selectedSection: null,
   liveFeed: true,
   queryTimeOut: 0,
+  displayMenu: false
 };
 
 export const sectionsConstant = [
