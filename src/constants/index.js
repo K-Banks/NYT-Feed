@@ -6,7 +6,8 @@ export const newState = {
   },
   liveFeed: true,
   queryTimeOut: 0,
-  displayMenu: false
+  displayMenu: false,
+  showComments: false
 };
 
 export const sectionsConstant = [
