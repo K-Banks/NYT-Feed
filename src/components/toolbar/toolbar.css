@@ -38,6 +38,7 @@
  li:hover {
    background-color: red;
    color: white;
+   cursor: pointer;
 }
  .button{
      width:178px;
@@ -47,6 +48,9 @@
      font-weight:bold;
      color:white;
      display: inline-block;
+}
+.button:hover {
+  cursor: pointer;
 }
  .button:before{
      content:"";
