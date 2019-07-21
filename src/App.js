@@ -14,12 +14,16 @@ class App extends React.Component {
     this.handleResponseError = this.handleResponseError.bind(this);
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+    this.changeSelectedSection = this.changeSelectedSection.bind(this);
 
     this.getArticles();
   }
 
   getArticles() {
-    const url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?limit=10&offset=0&api-key=' + process.env.REACT_APP_CLIENT_ID;
+    if (this.state.selectedSection.sectionValue === null) {
+
+    }
+    let url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?limit=10&offset=0&api-key=' + process.env.REACT_APP_CLIENT_ID;
     fetch(url).then(
       response => {
         if (response.status === 200) {
@@ -41,6 +45,8 @@ class App extends React.Component {
     )
   }
 
+
+  // Basic API error handling, prints to console, needs UI interaction
   handleResponseError(response) {
     console.log('There was an error: Response ' + response.status);
   }
@@ -56,7 +62,26 @@ class App extends React.Component {
     this.setState({ displayMenu: false }, () => {
       document.removeEventListener('click', this.hideDropdownMenu);
     });
+  }
 
+  changeSelectedSection(section) {
+    this.setState({ selectedSection: section}, () => {
+      // Insert trigger for new query
+    })
+  }
+
+  buildURLRequest() {
+    let url = '';
+
+    //Determine live feed or top articles
+    if (this.state.liveFeed) {
+      url = 'https://api.nytimes.com/svc/news/v3/content/all/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key';
+    } else {
+      url = 'https://api.nytimes.com/svc/topstories/v2/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key';
+    }
+
+    // attach API Key
+    return url;
   }
 
   render() {
@@ -66,7 +91,7 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <h1>NYT Feed</h1>
-            <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state}/>
+            <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state} changeSelectedSection={this.changeSelectedSection}/>
           </header>
           <div className="feed">
           {currentState.map(function(article) {
