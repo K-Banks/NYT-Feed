@@ -16,6 +16,7 @@ class App extends React.Component {
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
     this.changeSelectedSection = this.changeSelectedSection.bind(this);
     this.buildURLRequest = this.buildURLRequest.bind(this);
+    this.toggleLiveOrTop = this.toggleLiveOrTop.bind(this);
 
     this.getArticles();
   }
@@ -79,9 +80,17 @@ class App extends React.Component {
     }
 
     // attach API Key
-
     url = url + process.env.REACT_APP_CLIENT_ID;
+
     return url;
+  }
+
+  toggleLiveOrTop() {
+    if (this.state.liveFeed) {
+      this.setState({ liveFeed: false})
+    } else {
+      this.setState({ liveFeed: true})
+    }
   }
 
   render() {
@@ -91,7 +100,7 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <h1>NYT Feed</h1>
-            <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state} changeSelectedSection={this.changeSelectedSection}/>
+            <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state} changeSelectedSection={this.changeSelectedSection} toggle={this.toggleLiveOrTop}/>
           </header>
           <div className="feed">
           {currentState.map(function(article) {
