@@ -12,6 +12,9 @@ class App extends React.Component {
     this.state = freshState;
     this.getArticles = this.getArticles.bind(this);
     this.handleResponseError = this.handleResponseError.bind(this);
+    this.showDropdownMenu = this.showDropdownMenu.bind(this);
+    this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+
     this.getArticles();
   }
 
@@ -42,6 +45,20 @@ class App extends React.Component {
     console.log('There was an error: Response ' + response.status);
   }
 
+  showDropdownMenu(event) {
+    event.preventDefault();
+    this.setState({ displayMenu: true }, () => {
+      document.addEventListener('click', this.hideDropdownMenu);
+    });
+  }
+
+  hideDropdownMenu() {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.hideDropdownMenu);
+    });
+
+  }
+
   render() {
     let currentState = this.state.articles;
 
@@ -49,11 +66,11 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <h1>NYT Feed</h1>
-            <Toolbar props={sectionsConstant}/>
+            <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state}/>
           </header>
           <div className="feed">
           {currentState.map(function(article) {
-            return <Article props={article} key={article.slug_name}/>
+            return <Article props={article} key={article.slug_name} />
           })}
           </div>
         </div>
