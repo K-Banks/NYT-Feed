@@ -38,7 +38,8 @@ class App extends React.Component {
           let articleState = body.results;
           this.setState(
             {
-              articles : articleState
+              articles : articleState,
+              queryStatus: false
             }
           )
         }
@@ -66,7 +67,7 @@ class App extends React.Component {
   }
 
   changeSelectedSection(section) {
-    this.setState({ selectedSection: section}, () => {
+    this.setState({ selectedSection: section, queryStatus: true}, () => {
       this.getArticles();
     })
   }
@@ -114,11 +115,22 @@ class App extends React.Component {
             <h1>NYT Feed</h1>
             <Toolbar props={sectionsConstant} showDropdownMenu={this.showDropdownMenu} state={this.state} changeSelectedSection={this.changeSelectedSection} toggle={this.toggleLiveOrTop}/>
           </header>
-          <div className="feed">
-          {currentState.map(function(article) {
-            return <Article props={article} key={article.url} />
-          })}
-          </div>
+
+          { this.state.queryStatus ? (
+            <div class="loading">
+              <div class="spinner">
+                <div class="mask">
+                  <div class="maskedCircle"></div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="feed">
+            {currentState.map(function(article) {
+              return <Article props={article} key={article.url} />
+            })}
+            </div>
+          )}
         </div>
       )
   }
