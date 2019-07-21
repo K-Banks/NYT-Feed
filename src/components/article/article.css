@@ -19,6 +19,7 @@ img {
   text-align: left;
   grid-column: 3/4;
   grid-row: 2/3;
+  overflow-y: hidden;
 }
 
 .abstract {
@@ -26,4 +27,9 @@ img {
   text-indent: 20px;
   grid-column: 2/4;
   grid-row: 3/4;
+}
+
+.abstract p {
+  margin-top: 0;
+  margin-bottom: 0;
 }

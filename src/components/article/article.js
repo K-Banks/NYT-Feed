@@ -9,11 +9,12 @@ function Article(props){
         <div></div>
         <div className="image">
 
-        {props.props.multimedia[0] ? (
-          <img src={props.props.multimedia[0].url} alt="article"></img>
-        ) : (
-          <img src={require('../../assets/nyt-logo.png')} alt="article"></img>
-        )}
+          {props.props.multimedia[0] ? (
+            <img src={props.props.multimedia[0].url} alt="article"></img>
+          ) : (
+            <img src={require('../../assets/nyt-logo.png')} alt="article"></img>
+          )}
+
         </div>
         <div className="text">
           <h3><a href={props.props.url}>{props.props.title}</a></h3>
