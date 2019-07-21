@@ -26,7 +26,7 @@ function Toolbar(props){
             null
           )}
       </div>
-      <div className="button" onClick={props.toggle}>
+      <div className="button toggle" onClick={props.toggle}>
         {props.state.liveFeed ? (
           'Click for Top Stories'
         ) : (

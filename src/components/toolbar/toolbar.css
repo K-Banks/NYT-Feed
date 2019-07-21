@@ -53,3 +53,6 @@
      right:6px;
      top:18px;
 }
+  .toggle:before{
+    display: none;
+  }
