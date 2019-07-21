@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Article from './components/article/article.js';
-import { newState } from './constants';
+import Toolbar from './components/toolbar/toolbar.js';
+import { newState, sectionsConstant } from './constants';
 
 class App extends React.Component {
 
@@ -15,7 +16,7 @@ class App extends React.Component {
   }
 
   getArticles() {
-    const url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + process.env.REACT_APP_CLIENT_ID;
+    const url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?limit=10&api-key=' + process.env.REACT_APP_CLIENT_ID;
     fetch(url).then(
       response => {
         if (response.status === 200) {
@@ -48,6 +49,7 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <h1>NYT Feed</h1>
+            <Toolbar props={sectionsConstant}/>
           </header>
           <div className="feed">
           {currentState.map(function(article) {
