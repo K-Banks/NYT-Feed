@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   getArticles() {
-    const url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?limit=10&api-key=' + process.env.REACT_APP_CLIENT_ID;
+    const url = 'https://api.nytimes.com/svc/news/v3/content/all/all.json?limit=10&offset=0&api-key=' + process.env.REACT_APP_CLIENT_ID;
     fetch(url).then(
       response => {
         if (response.status === 200) {
