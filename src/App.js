@@ -47,13 +47,13 @@ class App extends React.Component {
       return (
         <div className="App">
           <header className="App-header">
-            <h1>NYT PLEASE</h1>
-            <div className="feed">
-              {currentState.map(function(article) {
-                return <Article props={article} />
-              })}
-            </div>
+            <h1>NYT Feed</h1>
           </header>
+          <div className="feed">
+          {currentState.map(function(article) {
+            return <Article props={article} />
+          })}
+          </div>
         </div>
       )
   }
