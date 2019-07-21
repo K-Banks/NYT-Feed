@@ -95,9 +95,13 @@ class App extends React.Component {
 
   toggleLiveOrTop() {
     if (this.state.liveFeed) {
-      this.setState({ liveFeed: false})
+      this.setState({ liveFeed: false}, () => {
+        this.getArticles();
+      })
     } else {
-      this.setState({ liveFeed: true})
+      this.setState({ liveFeed: true}, () => {
+        this.getArticles();
+      })
     }
   }
 
