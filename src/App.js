@@ -37,7 +37,9 @@ class App extends React.Component {
         if (body) {
           let articleState = body.results;
           this.setState(
-            {articles : articleState}
+            {
+              articles : articleState
+            }
           )
         }
       }
@@ -104,7 +106,7 @@ class App extends React.Component {
           </header>
           <div className="feed">
           {currentState.map(function(article) {
-            return <Article props={article} key={article.slug_name} />
+            return <Article props={article} key={article.url} />
           })}
           </div>
         </div>
