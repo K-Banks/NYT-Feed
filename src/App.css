@@ -1,3 +1,24 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #282c34;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
 .App {
   position: absolute;
   text-align: center;
@@ -8,9 +29,6 @@
   width: 600px;
   overflow-y: scroll;
   scroll-behavior: smooth;
-}
-
-.App-header {
 }
 
 .App-link {
