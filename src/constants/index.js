@@ -1,6 +1,9 @@
 export const newState = {
   articles: [],
-  selectedSection: null,
+  selectedSection: {
+    title: 'Select Section',
+    value: 'all'
+  },
   liveFeed: true,
   queryTimeOut: 0,
   displayMenu: false
@@ -9,7 +12,7 @@ export const newState = {
 export const sectionsConstant = [
   {
     title: 'All',
-    value: null
+    value: 'all'
   },
   {
     title: 'Arts',
@@ -114,5 +117,4 @@ export const sectionsConstant = [
   {
     title: 'World',
     value: 'world'
-  }
-];
+  }];
