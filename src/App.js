@@ -76,14 +76,14 @@ class App extends React.Component {
 
     //Determine live feed or top articles
     if (this.state.liveFeed) {
-      url = 'https://api.nytimes.com/svc/news/v3/content/all/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key=';
+      url = 'https://api.nytimes.com/svc/news/v3/content/all/' + this.state.selectedSection.value + '.json?offset=0&api-key=';
     } else {
 
       //Check if value is equal to 'all' then replace with equivalent string for top stories endpoint (home)
       if (this.state.selectedSection.value === 'all') {
-        url = 'https://api.nytimes.com/svc/topstories/v2/home.json?limit=10&offset=0&api-key=';
+        url = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=';
       } else {
-        url = 'https://api.nytimes.com/svc/topstories/v2/' + this.state.selectedSection.value + '.json?limit=10&offset=0&api-key=';
+        url = 'https://api.nytimes.com/svc/topstories/v2/' + this.state.selectedSection.value + '.json?api-key=';
       }
     }
 
