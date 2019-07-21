@@ -31,24 +31,12 @@ export const sectionsConstant = [
     value: 'business'
   },
   {
-    title: 'Fashion',
-    value: 'fashion'
-  },
-  {
     title: 'Food',
     value: 'food'
   },
   {
     title: 'Health',
     value: 'health'
-  },
-  {
-    title: 'Home',
-    value: 'home'
-  },
-  {
-    title: 'Insider',
-    value: 'insider'
   },
   {
     title: 'Magazine',
@@ -59,28 +47,12 @@ export const sectionsConstant = [
     value: 'movies'
   },
   {
-    title: 'National',
-    value: 'national'
-  },
-  {
-    title: 'New York Region',
-    value: 'nyregion'
-  },
-  {
     title: 'Obituaries',
     value: 'obituaries'
   },
   {
     title: 'Opinion',
     value: 'opinion'
-  },
-  {
-    title: 'Politics',
-    value: 'politics'
-  },
-  {
-    title: 'Real Estate',
-    value: 'realestate'
   },
   {
     title: 'Science',
@@ -91,10 +63,6 @@ export const sectionsConstant = [
     value: 'sports'
   },
   {
-    title: 'Sunday Review',
-    value: 'sundayreview'
-  },
-  {
     title: 'Technology',
     value: 'technology'
   },
@@ -103,16 +71,8 @@ export const sectionsConstant = [
     value: 'theater'
   },
   {
-    title: 'Time Magazine',
-    value: 'tmagazine'
-  },
-  {
     title: 'Travel',
     value: 'travel'
-  },
-  {
-    title: 'Upshot',
-    value: 'upshot'
   },
   {
     title: 'World',
