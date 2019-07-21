@@ -13,17 +13,26 @@ function Toolbar(props){
     }
 
     return (
-      <div  className="dropdown" >
-      <div className="button" onClick={props.showDropdownMenu}> {props.state.selectedSection.title} </div>
+      <div>
+        <div  className="dropdown" >
+          <div className="button" onClick={props.showDropdownMenu}> {props.state.selectedSection.title} </div>
 
-        { props.state.displayMenu ? (
-          <ul>
-            {menuOptions}
-          </ul>
-        ):
-        (
-          null
+          { props.state.displayMenu ? (
+            <ul>
+              {menuOptions}
+            </ul>
+          ):
+          (
+            null
+          )}
+      </div>
+      <div className="button" onClick={props.toggle}>
+        {props.state.liveFeed ? (
+          'Click for Top Stories'
+        ) : (
+          'Click for Recent Stories'
         )}
+      </div>
     </div>
 
   );
