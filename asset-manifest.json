@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/NYT-Feed/static/css/main.66ba2602.chunk.css",
-    "main.js": "/NYT-Feed/static/js/main.6fbff53f.chunk.js",
-    "main.js.map": "/NYT-Feed/static/js/main.6fbff53f.chunk.js.map",
+    "main.css": "/NYT-Feed/static/css/main.fe75215b.chunk.css",
+    "main.js": "/NYT-Feed/static/js/main.c30d9499.chunk.js",
+    "main.js.map": "/NYT-Feed/static/js/main.c30d9499.chunk.js.map",
     "runtime~main.js": "/NYT-Feed/static/js/runtime~main.adea4cc5.js",
     "runtime~main.js.map": "/NYT-Feed/static/js/runtime~main.adea4cc5.js.map",
     "static/js/2.27e9ad4f.chunk.js": "/NYT-Feed/static/js/2.27e9ad4f.chunk.js",
     "static/js/2.27e9ad4f.chunk.js.map": "/NYT-Feed/static/js/2.27e9ad4f.chunk.js.map",
     "index.html": "/NYT-Feed/index.html",
-    "precache-manifest.ab1218d169458ececff36b9a8b27340e.js": "/NYT-Feed/precache-manifest.ab1218d169458ececff36b9a8b27340e.js",
+    "precache-manifest.9d2936b8c2c355b24ed5bc6257316abe.js": "/NYT-Feed/precache-manifest.9d2936b8c2c355b24ed5bc6257316abe.js",
     "service-worker.js": "/NYT-Feed/service-worker.js",
-    "static/css/main.66ba2602.chunk.css.map": "/NYT-Feed/static/css/main.66ba2602.chunk.css.map",
+    "static/css/main.fe75215b.chunk.css.map": "/NYT-Feed/static/css/main.fe75215b.chunk.css.map",
     "static/media/nyt-logo.png": "/NYT-Feed/static/media/nyt-logo.8662bc4e.png"
   }
 }

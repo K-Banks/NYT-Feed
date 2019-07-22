@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "398a7242c7a22f95f59d189c8b4bc5a9",
+    "revision": "f7e1a44f174d3073d22e8aa093159a6c",
     "url": "/NYT-Feed/index.html"
   },
   {
-    "revision": "beacb0394f53b98e441d",
-    "url": "/NYT-Feed/static/css/main.66ba2602.chunk.css"
+    "revision": "a8597b0919b79e105917",
+    "url": "/NYT-Feed/static/css/main.fe75215b.chunk.css"
   },
   {
     "revision": "6ea22432601858ce9ef5",
     "url": "/NYT-Feed/static/js/2.27e9ad4f.chunk.js"
   },
   {
-    "revision": "beacb0394f53b98e441d",
-    "url": "/NYT-Feed/static/js/main.6fbff53f.chunk.js"
+    "revision": "a8597b0919b79e105917",
+    "url": "/NYT-Feed/static/js/main.c30d9499.chunk.js"
   },
   {
     "revision": "f16de87c0e58500bc1df",
