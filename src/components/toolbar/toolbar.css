@@ -5,7 +5,7 @@
 .dropdown {
      position: relative;
      display: inline-block;
-     background-color: red;
+     background-color: #d03e3e;
      width: 200px;
      border-radius:5px;
 }
@@ -36,13 +36,13 @@
      border-bottom: none;
 }
  li:hover {
-   background-color: red;
+   background-color: #ef731a;
    color: white;
    cursor: pointer;
 }
  .button{
      width:178px;
-     background-color:#ff3232 ;
+     background-color: #ef731a;
      padding:12px;
      border-radius:5px;
      font-weight:bold;
