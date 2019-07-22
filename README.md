@@ -1,14 +1,10 @@
 # _NYT API Feed Code Challenge_
 
 #### By: _**Kayl Eubanks**_
-* Live Deployment available at: https://k-banks.github.io/
+* Live Deployment available at: https://k-banks.github.io/NYT-Feed
 
 ## Description
 _Simple component-style application replicating a feed by consuming the New York Times API's (https://developer.nytimes.com/)._
-
-## Flow of app
-* Flow of app to be inserted later
-
 
 ## Setup/Installation Requirement for Developers:
 
@@ -17,12 +13,10 @@ _Simple component-style application replicating a feed by consuming the New York
 * Install node package manager if not already installed on local machine.
 * Run '$ npm install' to download all needed dependencies.
 * Run '$ npm run start' to serve the app on localhost:3000.
-
-## Component Tree
-![Component Tree](./src/assets/)
+* NOTE: An NYT developer account and API key is needed. Follow instructions on example.env file to compile with key
 
 ## Known Issues
-_No known bugs at this time._
+_Rapid switching between sections and endpoints can create mismatched results. Due to multiple API calls being issued without a time-out or sequential evaluation._
 _Please contact author at kayleubanks@gmail.com with any bugs._
 
 ## Technologies Used
