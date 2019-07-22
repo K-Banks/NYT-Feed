@@ -12,29 +12,39 @@ function Toolbar(props){
       props.changeSelectedSection(section)
     }
 
-    return (
-      <div className="toolbar-container">
-        <div className="dropdown">
-          <div className="button" onClick={props.showDropdownMenu}> {props.state.selectedSection.title} </div>
+    if (props.state.queryStatus) {
+      return (
+        <div className="toolbar-container">
+          <div className="dropdown">
+            <div className="button" onClick={props.showDropdownMenu}> {props.state.selectedSection.title} </div>
+        </div>
+          <div className="button toggle">Loading...</div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="toolbar-container">
+          <div className="dropdown">
+            <div className="button" onClick={props.showDropdownMenu}> {props.state.selectedSection.title} </div>
 
-          { props.state.displayMenu ? (
-            <ul>
-              {menuOptions}
-            </ul>
-          ):
-          (
-            null
-          )}
-      </div>
-      <div className="button toggle" onClick={props.toggle}>
-        {props.state.liveFeed ? (
-          'Click for Top Stories'
-        ) : (
-          'Click for Recent Stories'
-        )}
-      </div>
-    </div>
-
-  );
+            { props.state.displayMenu ? (
+              <ul>
+                {menuOptions}
+                </ul>
+            ):
+            (
+              null
+            )}
+        </div>
+          <div className="button toggle" onClick={props.toggle}>
+            {props.state.liveFeed ? (
+              'Click for Top Stories'
+            ) : (
+              'Click for Recent Stories'
+            )}
+          </div>
+        </div>
+    );
+  }
 }
 export default Toolbar;
