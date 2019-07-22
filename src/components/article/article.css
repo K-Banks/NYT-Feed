@@ -1,7 +1,7 @@
 .article-container {
   display: grid;
-  grid-template-columns: 20px 1fr 5px 3fr 20px;
-  grid-template-rows: 10px 120px 10px;
+  grid-template-columns: 20px 1fr 10px 3fr 70px 10px;
+  grid-template-rows: 10px 116px 25px 10px;
   border-top: 2px #3e424c solid;
 }
 
@@ -17,7 +17,7 @@ img {
 
 .text {
   text-align: left;
-  grid-column: 4/5;
+  grid-column: 4/6;
   grid-row: 2/3;
   overflow-y: hidden;
 }
@@ -37,4 +37,10 @@ p {
 
 a {
   color: #ef731a;
+}
+
+.byline-date {
+  width: 70px;
+  grid-column: 5/6;
+  grid-row: 3;
 }

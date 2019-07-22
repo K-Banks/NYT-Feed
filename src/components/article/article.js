@@ -12,9 +12,10 @@ function Article(props){
       abstract = props.props.abstract
     }
 
+    let published_date = props.props.published_date.substring(0,10)
+
     return(
       <div className="article-container">
-        <div></div>
         <div className="image">
 
           {props.props.multimedia[0] ? (
@@ -28,6 +29,9 @@ function Article(props){
           <h3><a href={props.props.url}>{props.props.title}</a></h3>
           <h5>{props.props.byline}</h5>
           <p>{abstract}</p>
+        </div>
+        <div className="byline-date">
+          <p><small>{published_date}</small></p>
         </div>
       </div>
     )
